@@ -1,0 +1,16 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+
+{% load staticfiles %}
+<h3>{{ message }}</h3>
+<p style="text-align: center">
+	<a href="https://выхлопспб.рф/index.html" target="_blank"> <img width="150" height="50" src="{% static 'app/content/logospb.png' %}" alt="SPB" /></a>	<br />
+	<a href="http://gluchakoff.ru/" target="_blank"> <img width="150" height="50" src="{% static 'app/content/logoglush.png' %}" alt="Glush" /></a>		  <br />
+	<a href="https://sv-sto.ru/" target="_blank"> <img width="150" height="50" src="{% static 'app/content/logosv.png' %}" alt="SV" /></a>			  <br />
+</p>
+
+{% endblock %}
+
+
+http://gluchakoff.ru/index/tjuning_vykhlopnykh_sistem_124_tjuning_glushitelja_v_spb/0-20
