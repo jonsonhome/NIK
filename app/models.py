@@ -4,10 +4,12 @@ Definition of models.
 
 from django.db import models
 
+# Create your models here.
 from datetime import datetime
 from django.contrib import admin
 from django.urls import reverse
 from django.contrib.auth.models import User
+
 
 class Blog(models.Model):
     title = models.CharField(max_length = 100, unique_for_date = "posted", verbose_name = "Заголовок")
@@ -20,6 +22,15 @@ class Blog(models.Model):
         return reverse("blogpost", args=[str(self.id)])
     def _str_(self):
         return self.title
+
+
+    class Meta:
+        db_table = "Posts"
+        ordering = ["-posted"]
+        verbose_name = "статья блога"
+        verbose_name_plural = "статья блога" 
+admin.site.register(Blog)
+
 class Comment(models.Model):
         text = models.TextField(verbose_name = "Коментарий")
         date = models.TextField(default = datetime.now(), db_index = True, verbose_name = "Дата")
@@ -34,10 +45,5 @@ class Comment(models.Model):
                 verbose_name = "Коментарий"
                 verbose_name_plural = "Коментарии"
                 ordering = ["-date"]
-class Meta:
-        db_table = "Posts"
-        ordering = ["-posted"]
-        verbose_name = "статья блога"
-        verbose_name_plural = "статья блога"  
+ 
 
-admin.site.register(Blog)

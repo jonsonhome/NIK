@@ -2,13 +2,13 @@
 
 {% block content %}
 
-<h3>Добавить статью</h3>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
 
+    <h3>Добавить статью</h3>
+    <form method="POST" enctype="multipart/form-data"> {%csrf_token%} {#Обязательная защита от атак CSRF#}
     <div>
-        {{ blogform.as_p }}
-        <button type="submit" class="save btn btn-default">Сохранить статью</button>
+        {{blogform.as_p }}
+        <button type="submit" class="save btn btn-default"> Сохранить статью </button>
     </div>
-</form>
+    </form>
+
 {% endblock %}

@@ -1,16 +1,18 @@
-
+"""
+Definition of views.
+"""
 
 from datetime import datetime
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from django.http import HttpRequest
-from .forms import AnketaForm
-from django.db import models
 from django.contrib.auth.forms import UserCreationForm
+from django.shortcuts import render, redirect
+
 from django.db import models
 from .models import Blog
-from .models import Comment
-from .forms import CommentForm
-from .forms import BlogForm
+from .models import Comment # использование модели комментариев
+from .forms import CommentForm # использование формы ввода комментария
+from .forms import BlogForm 
 
 def home(request):
     """Renders the home page."""

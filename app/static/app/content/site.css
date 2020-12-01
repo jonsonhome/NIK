@@ -45,3 +45,8 @@ input[type="checkbox"].input-validation-error {
 footer {
     text-align: center;
 }
+
+h7 {
+    color: white;
+    font-size: 70%;
+}
